@@ -39,7 +39,7 @@ $(function () {
 });
 function tablaLetrhozasa() {
     $("article").empty();
-    $("article").append("<table id='tabla'>");
+    $("article").append("<table>");
     $("article table").append("<tr>");
     for (var item in termekek[0]) {
         $("article table tr").append("<th id='" + item + "'>" + item + "</th>");
@@ -70,10 +70,10 @@ function kiir() {
 
 function ujTermekHozadas() {
     var ujszemely = {};
-    ujszemely.ID = $("#id").val();
-    ujszemely.nev = $("#nev").val();
-    ujszemely.ar = $("#ar").val();
-    ujszemely.marka = $("#marka").val();
+    ujszemely.ID = $("#uid").val();
+    ujszemely.nev = $("#unev").val();
+    ujszemely.ar = $("#uar").val();
+    ujszemely.marka = $("#umarka").val();
     termekek.push(ujszemely);
     console.log(ujszemely);
     tablaLetrhozasa();
@@ -120,23 +120,28 @@ function tablaModositasa() {
     $("aside form fieldset").append('<div><label for="mnev">Termék neve</label><input type="text" id="mnev" name="nev"></div>');
     $("aside form fieldset").append('<div><label for="mar">Termék ára</label><input type="number" id="mar" name="ar"></div>');
     $("aside form fieldset").append('<div><label for="mmarka">Márkája</label><input type="text" id="mmarka" name="marka"></div>');
-    $("aside form fieldset").append('<div><label for="mAz"></label><input type="hidden" id="mAz" name="mAz" value="' + id + '"></div>');
-    $("aside form fieldset").append('<input type="button" id="ok" name="ok" value="OK">');
-    $("#ok").click(modosit);
+    $("aside form fieldset").append('<div><label for="mAz"></label><input type="hidden" id="mAz" name="mAz" value="mAz"></div>');
+    $("aside form fieldset").append('<input type="button" id="mok" name="mok" value="OK">');
+    console.log("#mok");
+    $("#mok").click(modosit);
+    
 //    tablaLetrhozasa();
 //    kiir();
-   
-    function modosit() {
-        console.log(i);
-        var id = (i-1);
-        console.log(id);
-        termekek[id].ID = $("#mID").val();
-        //console.log("modosit");
-        termekek[id].nev = $("#mnev").val();
-        termekek[id].ar = $("#mar").val();
-        termekek[id].marka = $("#mmarka").val();
 
-        //termekek[2].nev.remove();
+    function modosit() {
+        if ($("#mID").val() != "") {
+            console.log(i);
+            var id = (i - 1);
+            console.log(id);
+            termekek[id].ID = $("#mID").val();
+            //console.log("modosit");
+            termekek[id].nev = $("#mnev").val();
+            termekek[id].ar = $("#mar").val();
+            termekek[id].marka = $("#mmarka").val();
+
+            //termekek[2].nev.remove();
+            
+        }
         $("aside").empty();
         tablaLetrhozasa();
         kiir();
