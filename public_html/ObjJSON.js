@@ -140,9 +140,9 @@ function tablaModositasa() {
             termekek[id].marka = $("#mmarka").val();
 
             //termekek[2].nev.remove();
-            
+            $("aside").empty();
         }
-        $("aside").empty();
+        
         tablaLetrhozasa();
         kiir();
     }
