@@ -1,0 +1,26 @@
+[
+    {
+        "ID": "1",
+        "nev": "Jelly Joker",
+        "ar": "2421 Ft",
+        "marka": "GEEK & GORGEOUS 101"
+    },
+    {
+        "ID": "2",
+        "nev": "Squalane Cleanser",
+        "ar": "2690 Ft",
+        "marka": "THE ORDINARY"
+    },
+    {
+        "ID": "3",
+        "nev": "Micellás víz",
+        "ar": "1999 Ft",
+        "marka": "Mixa"
+    },
+    {
+        "ID": "4",
+        "nev": "arcszérum-szalicilsav",
+        "ar": "1999 Ft",
+        "marka": "Revox"
+    }
+]
