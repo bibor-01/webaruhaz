@@ -114,12 +114,13 @@ function termekekTorlese() {
 function tablaModositasa() {
     $("aside").empty("<form>");
     var i = $(this).attr("id");
+    var id = (i - 1);
     $("aside").append("<form>");
     $("aside form").append("<fieldset id='elrejt'>");
-    $("aside form fieldset").append('<div><label for="mID">ID</label><input type="number" id="mID" name="mID"></div>');
-    $("aside form fieldset").append('<div><label for="mnev">Termék neve</label><input type="text" id="mnev" name="nev"></div>');
-    $("aside form fieldset").append('<div><label for="mar">Termék ára</label><input type="number" id="mar" name="ar"></div>');
-    $("aside form fieldset").append('<div><label for="mmarka">Márkája</label><input type="text" id="mmarka" name="marka"></div>');
+    $("aside form fieldset").append('<div><label for="mID">ID</label><input type="number" id="mID" name="mID" value="'+termekek[id].ID+'"></div>');
+    $("aside form fieldset").append('<div><label for="mnev">Termék neve</label><input type="text" id="mnev" name="mnev" value="'+termekek[id].nev+'"></div>');
+    $("aside form fieldset").append('<div><label for="mar">Termék ára</label><input type="text" id="mar" name="mar" value="'+termekek[id].ar+'"></div>');
+    $("aside form fieldset").append('<div><label for="mmarka">Márkája</label><input type="text" id="mmarka" name="marka" value="'+termekek[id].marka+'"></div>');
     $("aside form fieldset").append('<div><label for="mAz"></label><input type="hidden" id="mAz" name="mAz" value="mAz"></div>');
     $("aside form fieldset").append('<input type="button" id="mok" name="mok" value="OK">');
     console.log("#mok");
@@ -129,7 +130,7 @@ function tablaModositasa() {
 //    kiir();
 
     function modosit() {
-        if ($("#mID").val() != "") {
+        if ($("#mID").val() !== "") {
             console.log(i);
             var id = (i - 1);
             console.log(id);
